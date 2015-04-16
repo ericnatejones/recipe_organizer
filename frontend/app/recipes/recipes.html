@@ -1,5 +1,5 @@
 <!--Two-way data binding-->
 <ul>
-    <li ng-repeat="recipe in recipes">{{recipe.name}}</li>
+    <li ng-repeat="recipe in recipes"><a href="#/recipes/{{ recipe.id }}"> {{recipe.name}}</a></li>
 </ul>
 
