@@ -1,14 +1,33 @@
-<h1>{{ recipe.name}}</h1>
-<p>{{ recipe.description}}</p>
-<p>{{ recipe.directions}}</p>
+<h1 ng-hide="editing">{{ recipe.name }}</h1>
+<input ng-show="editing" ng-model="recipe.name">
 
-<button class="btn btn-sm btn-danger" ng-click="deleteRecipe()"> Delete Recipe</button>
-<p></p>
-<button class="btn btn-sm btn-success" ng-click="addRecipe()"> Add Recipe</button>
-<p></p>
-<button class="btn btn-sm btn-info" ng-click="backRecipe()"> Go back to Recipe List</button>
-<p></p>
+<p ng-hide="editing">{{ recipe.description }}</p>
+<textarea ng-show="editing" ng-model="recipe.description"></textarea>
 
+<p ng-hide="editing">{{ recipe.directions }}</p>
+<textarea ng-show="editing" ng-model="recipe.directions"></textarea>
+
+<br>
+<br>
+<button class="btn btn-sm btn-danger glyphicon glyphicon-trash"
+        ng-click="deleteRecipe()"> Delete This Recipe</button>
+<br>
+<br>
+<button class="btn btn-sm btn-success glyphicon glyphicon-plus"
+        ng-click="addRecipe()"> Add New Recipe</button>
+<br>
+<br>
+<button class="btn btn-sm btn-default glyphicon glyphicon-pencil"
+        ng-click="editing = !editing"
+        ng-hide="editing"> Edit Current Recipe</button>
+<br>
+<br>
+<button class="btn btn-sm btn-primary glyphicon glyphicon-floppy-disk"
+        ng-click="saveEditedRecipe()"
+        ng-show="editing"> Save Current Recipe</button>
+<br>
+<button class="btn btn-sm btn-info glyphicon glyphicon-triangle-left"
+        ng-click="backRecipe()"> Back To Recipe List</button>
 
 
 
