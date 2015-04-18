@@ -29,19 +29,17 @@
 
     <div class="section">
         <p class="para paraDetail"> Recipe details below:</p>
-        <p class="para">Name:</p>
 
-        <h1 ng-hide="editing">{{ recipe.name }}</h1>
+        <p class="para">Name:</p>
+        <p class="paraDetailList" ng-hide="editing">{{ recipe.name }}</p>
         <input ng-show="editing" ng-model="recipe.name">
 
         <p class="para">Description:</p>
-
-        <h2 ng-hide="editing">{{ recipe.description }}</h2>
+        <p class="paraDetailList" ng-hide="editing">{{ recipe.description }}</p>
         <textarea ng-show="editing" ng-model="recipe.description"></textarea>
 
         <p class="para">Directions:</p>
-
-        <h2 ng-hide="editing">{{ recipe.directions }}</h2>
+        <p class="paraDetailList" ng-hide="editing">{{ recipe.directions }}</p>
         <textarea ng-show="editing" ng-model="recipe.directions"></textarea>
 
         <ul>

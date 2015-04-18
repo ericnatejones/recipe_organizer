@@ -10,7 +10,7 @@
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     font-size: large;
     color: black;
-    background:#FF8C00;
+    background:#ADFF2F;
 
 }
 
@@ -41,14 +41,18 @@
     font-size: medium;
     font-color: black;
     background: #d3d3d3;
+    height:100%;
+    margin:0;
+	padding:0;
 }
 
 .title {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
-    font-size: 2em;
+    font-size: 2.5em;
     color: #0072BC;
-    background: #FF8C00;
+    background: #ADFF2F;
     text-align: center;
+    height: 2em;
 }
 
 .para {
@@ -56,7 +60,13 @@
     font-size: 1.25em;
     color: #0072BC;
     background: #d3d3d3;
+}
 
+.paraDetailList {
+    font-family: "Bookman", Georgia, "Times New Roman", serif;
+    font-size: 1.25em;
+    color: #000000;
+    background: #d3d3d3;
 }
 
 .paraDetail {
@@ -85,7 +95,7 @@
 
 .section {
     width:34.375em;
-    float:center;
+    float:left;
     padding:3.125em;
     display:inline-block;
 }
@@ -96,7 +106,21 @@
     clear:both;
     text-align:center;
     padding:.3125em;
+    width:100%;
+	height:4.25em;
+	position:relative;
+	bottom:0;
+	left:0;
 }
+
+.wrapper {
+	min-height:100%;
+	position:relative;
+}
+
+
+
+
 
 
 
