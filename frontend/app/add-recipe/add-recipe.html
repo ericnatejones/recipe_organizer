@@ -1,13 +1,39 @@
-<label>Recipe Name:</label>
-<input ng-model="recipe.name">
+<head>
+    <link rel="stylesheet" href="app.css">
+</head>
 
-<br>
-<label>Recipe Directions:</label>
-<textarea ng-model="recipe.directions"></textarea>
+<body>
 
-<br>
-<label>Recipe Descriptions:</label>
-<textarea ng-model="recipe.description"></textarea>
+    <div class = "aSide">
+        <br>
+        <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
+                ng-click="addRecipe()"> Save Recipe
+        </button>
 
-<br>
-<button ng-click="addRecipe()">Save Recipe</button>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-info glyphicon glyphicon-triangle-left"
+                ng-click="backRecipe()"> Back To Recipe List
+        </button>
+    </div>
+
+
+    <div class = "section">
+        <p class="para paraAdd"> Add a new recipe below:</p>
+
+        <label>Recipe Name:</label>
+        <br>
+        <input ng-model="recipe.name">
+
+        <br>
+        <label>Recipe Directions:</label>
+        <br>
+        <textarea ng-model="recipe.directions"></textarea>
+
+        <br>
+        <label>Recipe Descriptions:</label>
+        <br>
+        <textarea ng-model="recipe.description"></textarea>
+    </div>
+
+</body>

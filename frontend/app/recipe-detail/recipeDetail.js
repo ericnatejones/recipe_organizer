@@ -48,8 +48,9 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
             Restangular.one('recipes', $scope.recipeId).customPUT($scope.recipe).then(function () {
                 alert("Your recipe was successfully updated!");
                 $scope.editing = false;
-            }, function() {
-                alert("Something went wrong updating the recipe...");
+            },
+                function() {
+                    alert("Something went wrong updating the recipe...");
             });
         };
     }]);

@@ -1,5 +1,21 @@
 <!--Two-way data binding-->
-<ul>
-    <li ng-repeat="recipe in recipes"><a href="#/recipes/{{ recipe.id }}"> {{recipe.name}}</a></li>
-</ul>
+<head>
+    <link rel="stylesheet" href="app.css">
+</head>
 
+<body>
+    <div class = "aSide">
+    <br>
+    <button class="btn btn-sm btn-primary glyphicon glyphicon-plus"
+            ng-click="addRecipe()"> Add New Recipe
+    </button>
+    </div>
+
+    <div class = "section">
+        <p class="para paraList"> Here is a list of your recipes:</p>
+
+    <ul>
+        <li ng-repeat="recipe in recipes"><a href="#/recipes/{{ recipe.id }}"> {{recipe.name}}</a></li>
+    </ul>
+    </div>
+</body>

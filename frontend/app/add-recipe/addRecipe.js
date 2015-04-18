@@ -9,7 +9,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         });
     }])
 
-    .controller('AddRecipeCtrl', ['$scope', 'Restangular', function ($scope, Restangular) {
+    .controller('AddRecipeCtrl', ['$scope', 'Restangular','$location', function ($scope, Restangular, $location) {
         $scope.addRecipe = function () {
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
                 alert("Recipe was successfully created!");
@@ -18,4 +18,11 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 alert("There was a problem adding your recipe. This was the error: " + error.status + " " + error.statusText);
             });
         };
+        $scope.backRecipe = function() {
+            var confirmation = confirm("Are you sure that you want to go back to the recipe list?");
+            if(confirmation) {
+                    $location.path('/recipes')
+            }
+        };
     }]);
+

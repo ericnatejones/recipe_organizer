@@ -1,33 +1,60 @@
-<h1 ng-hide="editing">{{ recipe.name }}</h1>
-<input ng-show="editing" ng-model="recipe.name">
+<head>
+    <link rel="stylesheet" href="app.css">
+</head>
 
-<p ng-hide="editing">{{ recipe.description }}</p>
-<textarea ng-show="editing" ng-model="recipe.description"></textarea>
+<body>
+    <div class="aSide">
+        <br>
+        <br>
+        <button class="btn btn-sm btn-danger glyphicon glyphicon-trash"
+                ng-click="deleteRecipe()"> Delete This Recipe
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-primary glyphicon glyphicon-plus"
+                ng-click="addRecipe()"> Add New Recipe
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-warning glyphicon glyphicon-pencil"
+                ng-click="editing = !editing"> Edit Current Recipe
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-info glyphicon glyphicon-triangle-left"
+                ng-click="backRecipe()"> Back To Recipe List
+        </button>
+    </div>
 
-<p ng-hide="editing">{{ recipe.directions }}</p>
-<textarea ng-show="editing" ng-model="recipe.directions"></textarea>
 
-<br>
-<br>
-<button class="btn btn-sm btn-danger glyphicon glyphicon-trash"
-        ng-click="deleteRecipe()"> Delete This Recipe</button>
-<br>
-<br>
-<button class="btn btn-sm btn-success glyphicon glyphicon-plus"
-        ng-click="addRecipe()"> Add New Recipe</button>
-<br>
-<br>
-<button class="btn btn-sm btn-default glyphicon glyphicon-pencil"
-        ng-click="editing = !editing"
-        ng-hide="editing"> Edit Current Recipe</button>
-<br>
-<br>
-<button class="btn btn-sm btn-primary glyphicon glyphicon-floppy-disk"
-        ng-click="saveEditedRecipe()"
-        ng-show="editing"> Save Current Recipe</button>
-<br>
-<button class="btn btn-sm btn-info glyphicon glyphicon-triangle-left"
-        ng-click="backRecipe()"> Back To Recipe List</button>
+    <div class="section">
+        <p class="para paraDetail"> Recipe details below:</p>
+        <p class="para">Name:</p>
+
+        <h1 ng-hide="editing">{{ recipe.name }}</h1>
+        <input ng-show="editing" ng-model="recipe.name">
+
+        <p class="para">Description:</p>
+
+        <h2 ng-hide="editing">{{ recipe.description }}</h2>
+        <textarea ng-show="editing" ng-model="recipe.description"></textarea>
+
+        <p class="para">Directions:</p>
+
+        <h2 ng-hide="editing">{{ recipe.directions }}</h2>
+        <textarea ng-show="editing" ng-model="recipe.directions"></textarea>
+
+        <ul>
+            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+        </ul>
+        <br>
+        <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
+                ng-click="saveEditedRecipe()"
+                ng-show="editing"> Save Changes
+        </button>
+        <br>
+    </div>
+</body>
 
 
 
