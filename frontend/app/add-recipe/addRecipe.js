@@ -22,6 +22,14 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 $scope.ingredientName = null;
             }
         };
+
+        $scope.removeIngredientFromRecipe = function (ingredient) {
+            var index = $scope.recipe.ingredients.indexOf(ingredient);
+            if (index != -1) {
+                $scope.recipe.ingredients.splice(index, 1);
+            }
+        };
+
         $scope.addRecipe = function () {
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
                 alert("Recipe was successfully created!");
@@ -30,6 +38,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 alert("There was a problem adding your recipe. This was the error: " + error.status + " " + error.statusText);
             });
         };
+
         $scope.backRecipe = function() {
             var confirmation = confirm("Are you sure that you want to go back to the recipe list?");
             if(confirmation) {

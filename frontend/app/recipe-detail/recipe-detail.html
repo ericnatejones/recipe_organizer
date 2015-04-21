@@ -43,15 +43,26 @@
         <textarea ng-show="editing" ng-model="recipe.directions"></textarea>
 
         <p class="para">Ingredients:</p>
-        <ul>
-            <li class="paraDetailList" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
-        </ul>
+        <p class="para sub" ng-show="editing">(Click the X to delete ingredient)</p>
+            <ul>
+                <li class="paraDetailList" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}
+                    <i ng-click="removeIngredientFromRecipe(ingredient)"
+                       ng-show="editing"
+                       class="btn btn-xs btn-danger glyphicon glyphicon-remove"></i>
+                </li>
+            </ul>
         <br>
-        <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
-                ng-click="saveEditedRecipe()"
-                ng-show="editing"> Save Changes
-        </button>
-        <br>
+        <div ng-show="editing">
+            <input ng-model ="ingredientName">
+            <button ng-click="addIngredientToRecipe(ingredientName)" ng-show="editing">Add Ingredient to Recipe</button>
+            <br>
+            <br>
+            <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
+                    ng-click="saveEditedRecipe()"
+                    ng-show="editing"> Save Changes
+            </button>
+            <br>
+        </div>
     </div>
 
     <div class = "rightSide">

@@ -43,7 +43,10 @@
 
         <br>
         <ol>
-            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}
+                <i ng-click="removeIngredientFromRecipe(ingredient)"
+                   class="btn btn-xs btn-danger glyphicon glyphicon-remove"></i>
+            </li>
         </ol>
         <br>
         <br>
