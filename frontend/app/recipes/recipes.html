@@ -4,18 +4,36 @@
 </head>
 
 <body>
-    <div class = "aSide">
-    <br>
-    <button class="btn btn-sm btn-primary glyphicon glyphicon-plus"
-            ng-click="addRecipe()"> Add New Recipe
-    </button>
+    <div class = "leftSide">
+        <br>
+        <button class="btn btn-sm btn-primary glyphicon glyphicon-plus"
+                ng-click="addRecipe()"> Add New Recipe
+        </button>
     </div>
 
     <div class = "section">
-        <p class="para paraList"> Here is a list of your recipes:</p>
-
+        <!--This is the search functionality-->
+        <p class="para paraList"> Search your list of Recipes:</p>
+        <p class="para sub"> Type in Name, Description, Directions, or Ingredients</p>
+        <input ng-model="searchText.name">
+        <br>
+        <br>
         <ul>
-            <li ng-repeat="recipe in recipes"><a href="#/recipes/{{ recipe.id }}"> {{recipe.name}}</a></li>
+            <li ng-repeat="recipe in recipes | filter:searchText"><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></li>
         </ul>
     </div>
+
+    <div class = "rightSide">
+    </div>
+
+    <div class = "section pictureArea">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class = "stitched">Recipe Photo Goes Here</p>
+    </div>
+
 </body>

@@ -10,8 +10,6 @@
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     font-size: large;
     color: black;
-    background:#ADFF2F;
-
 }
 
 .menu:before {
@@ -40,33 +38,37 @@
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     font-size: medium;
     font-color: black;
-    background: #d3d3d3;
-    height:100%;
-    margin:0;
-	padding:0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(backgrounds/confectionary.png);
 }
 
 .title {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     font-size: 2.5em;
     color: #0072BC;
-    background: #ADFF2F;
     text-align: center;
     height: 2em;
+    background-image: url(backgrounds/confectionary.png);
+
 }
 
 .para {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
     font-size: 1.25em;
     color: #0072BC;
-    background: #d3d3d3;
+}
+
+.sub {
+    font-size: 1em;
+    color: #0072BC;
 }
 
 .paraDetailList {
     font-family: "Bookman", Georgia, "Times New Roman", serif;
-    font-size: 1.25em;
+    font-size: 1.1em;
     color: #000000;
-    background: #d3d3d3;
 }
 
 .paraDetail {
@@ -81,41 +83,75 @@
 
 .paraList {
     border-bottom: .15em solid black;
-    width: 13.875em;
+    width: 12.875em;
 }
 
-.aSide {
-    line-height:2em;
-    background-color:lightslategray;
-    height:37.5em;
-    width:12.5em;
-    float:left;
-    padding:.3125em;
+.leftSide {
+    line-height: 2em;
+    background-image: url(backgrounds/congruent_outline.png);
+    height: 57.5em;
+    width: 12.5em;
+    float: left;
+    padding: .3125em;
 }
 
 .section {
-    width:34.375em;
-    float:left;
-    padding:3.125em;
-    display:inline-block;
+    width: 34.375em;
+    float: left;
+    padding: 3.125em;
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.rightSide {
+    line-height: 2em;
+    background-image: url(backgrounds/congruent_outline.png);
+    height: 57.5em;
+    width: 12.5em;
+    float: right;
+    padding: .3125em;
+}
+
+.pictureArea {
+    line-height: 2em;
+    height: 57.5em;
+    width: 26.5em;
+    float: right;
+    padding: .625em;
+}
+
+.stitched {
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+    background: #ff0030;
+    color: #fff;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1.3em;
+    border: 2px dashed #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 4px #ff0030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
+    text-shadow: -1px -1px #aa3030;
+    font-weight: normal;
 }
 
 .footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-    padding:.3125em;
-    width:100%;
-	height:4.25em;
-	position:relative;
-	bottom:0;
-	left:0;
+    background-color: black;
+    color: white;
+    clear: both;
+    text-align: center;
+    padding: .3125em;
+    width: 100%;
+    height: 4.25em;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
 
 .wrapper {
-	min-height:100%;
-	position:relative;
+    min-height: 100%;
+    position: relative;
 }
 
 

@@ -3,7 +3,7 @@
 </head>
 
 <body>
-    <div class="aSide">
+    <div class="leftSide">
         <br>
         <br>
         <button class="btn btn-sm btn-danger glyphicon glyphicon-trash"
@@ -42,8 +42,9 @@
         <p class="paraDetailList" ng-hide="editing">{{ recipe.directions }}</p>
         <textarea ng-show="editing" ng-model="recipe.directions"></textarea>
 
+        <p class="para">Ingredients:</p>
         <ul>
-            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
+            <li class="paraDetailList" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
         </ul>
         <br>
         <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
@@ -51,6 +52,19 @@
                 ng-show="editing"> Save Changes
         </button>
         <br>
+    </div>
+
+    <div class = "rightSide">
+    </div>
+
+    <div class = "pictureArea">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class = "stitched">Recipe Photo Goes Here</p>
     </div>
 </body>
 

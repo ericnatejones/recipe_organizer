@@ -17,7 +17,6 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
         Restangular.one('recipes', $scope.recipeId).customGET().then(function (recipe) {
             $scope.recipe = recipe;
         });
-
         $scope.deleteRecipe = function() {
             var confirmation = confirm("Are you sure that you want to delete this recipe? This cannot be undone.");
 
@@ -27,7 +26,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
                     $location.path('/recipes')
                 },
                 function() {
-                    alert("There was a problem deleting the recipe! :(") //this would be useful if your server died mid process
+                    alert("There was a problem deleting the recipe! :(")
                 });
             }
         };

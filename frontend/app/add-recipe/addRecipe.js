@@ -10,6 +10,18 @@ angular.module('myApp.addRecipe', ['ngRoute'])
     }])
 
     .controller('AddRecipeCtrl', ['$scope', 'Restangular','$location', function ($scope, Restangular, $location) {
+
+        $scope.recipe = {
+            ingredients: []
+        };
+
+        $scope.addIngredientToRecipe = function (ingredientName) {
+            if (ingredientName != null) {
+                var ingredient = {name: ingredientName}
+                $scope.recipe.ingredients.push(ingredient);
+                $scope.ingredientName = null;
+            }
+        };
         $scope.addRecipe = function () {
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
                 alert("Recipe was successfully created!");
