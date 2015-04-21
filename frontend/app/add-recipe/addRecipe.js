@@ -32,10 +32,10 @@ angular.module('myApp.addRecipe', ['ngRoute'])
 
         $scope.addRecipe = function () {
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
-                alert("Recipe was successfully created!");
+                toastr.success("Recipe was successfully created!");
                 $scope.recipe = {};
             }, function (error) {
-                alert("There was a problem adding your recipe. This was the error: " + error.status + " " + error.statusText);
+                toastr.error("There was a problem adding your recipe. This was the error: " + error.status + " " + error.statusText);
             });
         };
 

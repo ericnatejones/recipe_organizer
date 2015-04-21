@@ -70,12 +70,12 @@
 
     <div class = "pictureArea">
         <br>
+
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p class = "stitched">Recipe Photo Goes Here</p>
+        <p class = "stitched"><a href="#/recipes/{{ recipe.id }}" class= "recipePhotoName">{{ recipe.name }}</a>
+            <img width="250"
+                 class="img-responsive center-block"
+                 ng-src="{{ recipe.photo }}"></p>
     </div>
 </body>
 

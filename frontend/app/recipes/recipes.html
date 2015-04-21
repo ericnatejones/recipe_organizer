@@ -19,21 +19,40 @@
         <br>
         <br>
         <ul>
-            <li ng-repeat="recipe in recipes | filter:searchText"><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></li>
+            <li ng-repeat="recipe in recipes | filter:searchText">
+                <a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></li>
         </ul>
     </div>
+    <!--<div class = "pictureArea">-->
+        <!--<img src="" width="300" class=""img-responsive">-->
+    <!--</div>-->
 
     <div class = "rightSide">
     </div>
 
-    <div class = "section pictureArea">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p class = "stitched">Recipe Photo Goes Here</p>
-    </div>
-
 </body>
+
+
+
+<!--Two ways to adding a photo:-->
+
+    <!--<div class = "section pictureArea">-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<p class = "stitched">Recipe Photo Goes Here-->
+        <!--<a href="#/recipes/{{ recipe.id }}">{{ recipe.photo }}</a>-->
+            <!--<img width="200"-->
+                 <!--class="img-responsive"-->
+                 <!--ng-src="{{ recipe.photo }}"></p>-->
+    <!--</div>-->
+<!--        <div ng-repeat="recipe in recipes | filter:searchText">
+            <p><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></p>
+            <img width="200"
+                 class="img-responsive"
+                 ng-src="{{ recipe.photo }}">
+        </div>
+        -->
+
+
+
+
