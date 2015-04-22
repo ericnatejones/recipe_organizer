@@ -22,24 +22,28 @@
         <p class="para paraAdd"> Add a new recipe below:</p>
 
         <label>Recipe Name:</label>
-        <br>
-        <input ng-model="recipe.name">
+        <div class="form-group">
+            <input ng-model="recipe.name" class="form-control">
+        </div>
 
         <br>
         <label>Recipe Directions:</label>
-        <br>
-        <textarea ng-model="recipe.directions"></textarea>
+        <div class="form-group">
+            <textarea ng-model="recipe.directions" class="form-control"></textarea>
+        </div>
 
         <br>
         <label>Recipe Descriptions:</label>
-        <br>
-        <textarea ng-model="recipe.description"></textarea>
+        <div class="form-group">
+            <textarea ng-model="recipe.description" class="form-control"></textarea>
+        </div>
 
         <br>
         <label>Ingredients:</label>
-        <br>
-        <input ng-model="ingredientName">
+        <div class="form-group">
+            <input ng-model="ingredientName" class="form-control">
         <button ng-click="addIngredientToRecipe(ingredientName)">Add Ingredient to Recipe</button>
+        </div>
 
         <br>
         <ol>
@@ -61,6 +65,13 @@
     <div class = "pictureArea">
         <br>
         <br>
-        <p class = "stitched">Recipe Photo Goes Here</p>
+        <p class = "stitched">Recipe Photo Goes Here
+            <img width="250"
+                 class="pictureDetail img-responsive center-block img-rounded"
+                 ng-src="{{ recipe.photo }}"></p>
+            <div class="form-group">
+                <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+               onchange="angular.element(this).scope().addPhoto()"/>
+            </div>
     </div>
 </body>

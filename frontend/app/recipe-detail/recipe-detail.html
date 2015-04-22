@@ -32,15 +32,21 @@
 
         <p class="para">Name:</p>
         <p class="paraDetailList" ng-hide="editing">{{ recipe.name }}</p>
-        <input ng-show="editing" ng-model="recipe.name">
+                <div class="form-group">
+                     <input class="form-control" ng-show="editing" ng-model="recipe.name">
+                </div>
 
         <p class="para">Description:</p>
         <p class="paraDetailList" ng-hide="editing">{{ recipe.description }}</p>
-        <textarea ng-show="editing" ng-model="recipe.description"></textarea>
+                <div class="form-group">
+                    <textarea class="form-control" ng-show="editing" ng-model="recipe.description"></textarea>
+                </div>
 
         <p class="para">Directions:</p>
         <p class="paraDetailList" ng-hide="editing">{{ recipe.directions }}</p>
-        <textarea ng-show="editing" ng-model="recipe.directions"></textarea>
+                <div class="form-group">
+                    <textarea class="form-control" ng-show="editing" ng-model="recipe.directions"></textarea>
+                </div>
 
         <p class="para">Ingredients:</p>
         <p class="para sub" ng-show="editing">(Click the X to delete ingredient)</p>
@@ -52,9 +58,13 @@
                 </li>
             </ul>
         <br>
-        <div ng-show="editing">
-            <input ng-model ="ingredientName">
-            <button ng-click="addIngredientToRecipe(ingredientName)" ng-show="editing">Add Ingredient to Recipe</button>
+            <div class="form-group">
+                <div ng-show="editing">
+                    <input class="form-control" ng-model ="ingredientName">
+                    <br>
+                    <button ng-click="addIngredientToRecipe(ingredientName)" ng-show="editing">Add Ingredient to Recipe</button>
+                </div>
+             </div>
             <br>
             <br>
             <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
@@ -70,12 +80,15 @@
 
     <div class = "pictureArea">
         <br>
-
         <br>
         <p class = "stitched"><a href="#/recipes/{{ recipe.id }}" class= "recipePhotoName">{{ recipe.name }}</a>
             <img width="250"
-                 class="img-responsive center-block"
+                 class="pictureDetail img-responsive center-block img-rounded"
                  ng-src="{{ recipe.photo }}"></p>
+        <div class="form-group" ng-show="editing">
+                <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+               onchange="angular.element(this).scope().addPhoto()"/>
+        </div>
     </div>
 </body>
 

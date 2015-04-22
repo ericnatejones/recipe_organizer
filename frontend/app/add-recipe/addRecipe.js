@@ -33,7 +33,10 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         $scope.addRecipe = function () {
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
                 toastr.success("Recipe was successfully created!");
-                $scope.recipe = {};
+                $scope.recipe = {ingredients: []};
+                $scope.recipe.photo = null;
+                document.getElementById('file').value = null;
+                $scope.$apply();
             }, function (error) {
                 toastr.error("There was a problem adding your recipe. This was the error: " + error.status + " " + error.statusText);
             });
@@ -44,6 +47,16 @@ angular.module('myApp.addRecipe', ['ngRoute'])
             if(confirmation) {
                     $location.path('/recipes')
             }
+        };
+
+        $scope.addPhoto = function () {
+            var file = document.getElementById('file').files[0],
+                reader = new FileReader();
+            reader.onload = function (e) {
+                $scope.recipe.photo = 'data:image/png;base64,' + btoa(e.target.result);
+                $scope.$apply();
+            };
+            reader.readAsBinaryString(file);
         };
     }]);
 

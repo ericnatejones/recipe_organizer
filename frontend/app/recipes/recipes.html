@@ -15,7 +15,9 @@
         <!--This is the search functionality-->
         <p class="para paraList"> Search your list of Recipes:</p>
         <p class="para sub"> Type in Name, Description, Directions, or Ingredients</p>
-        <input ng-model="searchText.name">
+        <div class="form-group">
+            <input ng-model="searchText.name" class="form-control">
+        </div>
         <br>
         <br>
         <ul>
@@ -44,14 +46,15 @@
             <!--<img width="200"-->
                  <!--class="img-responsive"-->
                  <!--ng-src="{{ recipe.photo }}"></p>-->
+
     <!--</div>-->
-<!--        <div ng-repeat="recipe in recipes | filter:searchText">
-            <p><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></p>
-            <img width="200"
-                 class="img-responsive"
-                 ng-src="{{ recipe.photo }}">
-        </div>
-        -->
+        <!--<div ng-repeat="recipe in recipes | filter:searchText">-->
+            <!--<p><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></p>-->
+            <!--<img width="200"-->
+                 <!--class="img-responsive"-->
+                 <!--ng-src="{{ recipe.photo }}">-->
+        <!--</div>-->
+
 
 
 
