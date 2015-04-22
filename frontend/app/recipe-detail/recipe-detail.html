@@ -29,6 +29,7 @@
 
     <div class="section">
         <p class="para paraDetail"> Recipe details below:</p>
+        <p class="required" ng-show="editing">*All fields required*</p>
 
         <p class="para">Name:</p>
         <p class="paraDetailList" ng-hide="editing">{{ recipe.name }}</p>

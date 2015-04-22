@@ -20,7 +20,7 @@
 
     <div class = "section">
         <p class="para paraAdd"> Add a new recipe below:</p>
-
+        <p class="required">*All fields required*</p>
         <label>Recipe Name:</label>
         <div class="form-group">
             <input ng-model="recipe.name" class="form-control">
@@ -44,6 +44,7 @@
             <input ng-model="ingredientName" class="form-control">
         <button ng-click="addIngredientToRecipe(ingredientName)">Add Ingredient to Recipe</button>
         </div>
+        <p class="para sub" ng-show="editing">(Click the X to delete ingredient)</p>
 
         <br>
         <ol>
@@ -68,7 +69,8 @@
         <p class = "stitched">Recipe Photo Goes Here
             <img width="250"
                  class="pictureDetail img-responsive center-block img-rounded"
-                 ng-src="{{ recipe.photo }}"></p>
+                 src="{{ recipe.photo }}"
+                    ng-show="recipe.photo"></p>
             <div class="form-group">
                 <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
                onchange="angular.element(this).scope().addPhoto()"/>

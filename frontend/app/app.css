@@ -62,7 +62,8 @@
 
 .sub {
     font-size: 1em;
-    color: #0072BC;
+    color: red;
+    font-style: italic;
 }
 
 .paraDetailList {
@@ -162,6 +163,11 @@
 
 .pictureDetail {
     margin-top: 30px;
+}
+
+.required {
+    color:red;
+    font-style: italic;
 }
 
 

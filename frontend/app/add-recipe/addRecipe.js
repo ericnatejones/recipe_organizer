@@ -35,6 +35,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
                 toastr.success("Recipe was successfully created!");
                 $scope.recipe = {ingredients: []};
                 $scope.recipe.photo = null;
+
                 document.getElementById('file').value = null;
                 $scope.$apply();
             }, function (error) {
