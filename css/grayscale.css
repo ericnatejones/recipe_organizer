@@ -260,18 +260,21 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     /*color: #000000;*/
-    background: url(../img/rock_image_1.jpeg) no-repeat bottom center scroll;
+    background: url(../img/mountain-3.jpg) no-repeat top center scroll;
     image-rendering: auto;
     /*background-color: #d3d3d3;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+    color: black;
+    height: 600px;
+    display: inline-flex column;
 
 }
 
 .contact {
-    padding-top: 80px;
+    padding-top: 130px;
 }
 
 .skills {
@@ -292,7 +295,7 @@ a:focus {
 
 @media(min-width:767px) {
     .content-section {
-        padding-top: 250px;
+        padding-top: 150px;
     }
 
     .projects-section  {
@@ -313,6 +316,21 @@ a:focus {
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+}
+
+.btn-project {
+    border: 1px solid #000000;
+    color: #000000;
+    background-color: transparent;
+
+}
+
+.btn-project:hover,
+.btn-project:focus {
+    border: 1px solid #42dca3;
+    outline: 0;
+    color: #000;
+    background-color: #42dca3;
 }
 
 .btn-default {
