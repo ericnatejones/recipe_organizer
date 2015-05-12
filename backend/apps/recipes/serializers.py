@@ -38,7 +38,7 @@ class Base64ImageField(serializers.ImageField):
                 self.fail('invalid_image')
 
             # Generate file name:
-            file_name = str(uuid.uuid4())[:12] # 12 characters are more than enough.
+            file_name = str(uuid.uuid4())[:12]  # 12 characters are more than enough.
             # Get the file name extension:
             file_extension = self.get_file_extension(file_name, decoded_file)
 
@@ -62,16 +62,17 @@ class RecipeSerializer(serializers.ModelSerializer):
     photo = Base64ImageField(max_length=None, use_url=True)
 
     class Meta:
-        model = Recipe
 
-    def create(self, validated_data):
-        ingredients_data = validated_data.pop('ingredients')
-        recipe = Recipe.objects.create(**validated_data)
+    # model = Recipe
 
-        for ingredient in ingredients_data:
-            ingredient, created = Ingredient.objects.get_or_create(name=ingredient['name'])
-            recipe.ingredients.add(ingredient)
-        return recipe
+        def create(self, validated_data):
+            ingredients_data = validated_data.pop('ingredients')
+            recipe = Recipe.objects.create(**validated_data)
+
+            for ingredient in ingredients_data:
+                ingredient, created = Ingredient.objects.get_or_create(name=ingredient['name'])
+                recipe.ingredients.add(ingredient)
+            return recipe
 
     def update(self, instance, validated_data):
         ingredients_data = validated_data.pop('ingredients')

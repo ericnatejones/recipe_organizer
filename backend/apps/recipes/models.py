@@ -18,9 +18,6 @@ class Recipe(models.Model):
     def __str__(self):
         return self.name
 
+# class User_Profile(models.Model):
+#     user = models.OneToOneField(user)
 
-
-# If you want to change the way Django shows a pluralized entity on the admin site:
-# class Meta:
-#         verbose_name_plural = "Companies"
-# (This is nested inside of the model's class that you want to effect)

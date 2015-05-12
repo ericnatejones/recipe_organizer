@@ -6,7 +6,8 @@ angular.module('myApp', [
     'myApp.recipes',
     'myApp.recipeDetail',
     'myApp.addRecipe',
-    //'myApp.view2',
+    'myApp.auth',
+    //'myApp.viewtemplate',
     'myApp.version',
     'restangular',
 ]).
