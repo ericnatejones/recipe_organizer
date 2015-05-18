@@ -7,7 +7,11 @@ angular.module('myApp.user', [])
 
         user.info = {
             id: '',
-            name: ''
+            first_name: '',
+            last_name: '',
+            username: '',
+            email: '',
+            recipes: ''
         };
 
         user.login = function(credentials) {

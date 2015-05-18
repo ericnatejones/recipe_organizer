@@ -63,16 +63,16 @@ class RecipeSerializer(serializers.ModelSerializer):
 
     class Meta:
 
-    # model = Recipe
+        # model = Recipe
 
-        def create(self, validated_data):
-            ingredients_data = validated_data.pop('ingredients')
-            recipe = Recipe.objects.create(**validated_data)
+    def create(self, validated_data):
+        ingredients_data = validated_data.pop('ingredients')
+        recipe = Recipe.objects.create(**validated_data)
 
-            for ingredient in ingredients_data:
-                ingredient, created = Ingredient.objects.get_or_create(name=ingredient['name'])
-                recipe.ingredients.add(ingredient)
-            return recipe
+        for ingredient in ingredients_data:
+            ingredient, created = Ingredient.objects.get_or_create(name=ingredient['name'])
+            recipe.ingredients.add(ingredient)
+        return recipe
 
     def update(self, instance, validated_data):
         ingredients_data = validated_data.pop('ingredients')
