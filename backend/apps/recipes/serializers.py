@@ -62,8 +62,7 @@ class RecipeSerializer(serializers.ModelSerializer):
     photo = Base64ImageField(max_length=None, use_url=True)
 
     class Meta:
-
-        # model = Recipe
+        model = Recipe
 
     def create(self, validated_data):
         ingredients_data = validated_data.pop('ingredients')
