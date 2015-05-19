@@ -2,7 +2,7 @@
 
 angular.module('myApp.user', [])
 
-    .service('user', function (Restangular, $q) {
+    .service('user', function (Restangular, $q, $location) {
         var user = {};
 
         user.info = {
@@ -14,15 +14,29 @@ angular.module('myApp.user', [])
             recipes: ''
         };
 
-        user.login = function(credentials) {
+        user.getInfo = function () {
             var deferred = $q.defer();
 
-            Restangular.one(user.URLS.login).customPOST(credentials).then(function(data) {
-                user.info = data.user;
-
+            Restangular.one('get-user-info/').customGET.then(function (response) {
+                user.info = response.data;
                 deferred.resolve();
+            }, function (error) {
+                deferred.reject(error)
+            });
 
-            }, function(error){
+            return deferred.promise;
+        };
+
+        user.login = function (credentials) {
+            var deferred = $q.defer();
+
+            Restangular.one(user.urls.get_token).customPOST(credentials).then(function (response) {
+                sessionStorage.setItem('DjangoAuthToken', response.data.token);
+                Restangular.setDefaultHeaders({Authorization: 'Token ' + response.data.token});
+                user.getInfo().then(function () {
+                    deferred.resolve();
+                });
+            }, function (error) {
 
                 deferred.reject(error)
             });
@@ -30,12 +44,23 @@ angular.module('myApp.user', [])
             return deferred.promise
         };
 
+        user.logout = function () {
+            user.info = {
+                id: '',
+                name: ''
+            };
+            sessionStorage.clear();
+            Restangular.setDefaultHeaders({Authorization: ''});
+            $location.path('/login');
+        };
+
         user.urls = {
-            login: "/login",
-            logout: "/logout",
-            user: "/user"
-        }
-        
+            get_token: 'api-auth-token/',
+            get_user_info: 'get-user-info/'
+            //logout: '/logout',
+            //user: '/user'
+        };
+
         return user
     })
 
