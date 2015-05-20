@@ -13,7 +13,7 @@ angular.module('myApp', [
     'restangular',
 ]).
     config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
-        $routeProvider.otherwise({redirectTo: '/recipes'});
+        $routeProvider.otherwise({redirectTo: '/auth'});
         RestangularProvider.setBaseUrl('http://localhost:8001');
         RestangularProvider.setRequestSuffix('/');
 

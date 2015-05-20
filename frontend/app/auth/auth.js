@@ -9,12 +9,19 @@ angular.module('myApp.auth', ['ngRoute'])
         });
     }])
 
-    .controller('AuthCtrl', ['Restangular', '$scope', function (Restangular, $scope) {
+    .controller('AuthCtrl', ['user', 'Restangular', '$scope', '$location', function (user, Restangular, $scope, $location) {
         $scope.credentials = {
-            username: "",
-            password: ""
-        }
+            username: '',
+            password: ''
+        };
 
+        $scope.login = function () {
+            user.login($scope.credentials).then(function () {
+                $location.path('/recipes')
+            }, function () {
+                alert("There was a problem. Please try again")
+            })
+        };
     }]);
 
 

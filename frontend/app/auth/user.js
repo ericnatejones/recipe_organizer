@@ -17,8 +17,8 @@ angular.module('myApp.user', [])
         user.getInfo = function () {
             var deferred = $q.defer();
 
-            Restangular.one('get-user-info/').customGET.then(function (response) {
-                user.info = response.data;
+            Restangular.one(user.urls.get_user_info).customGET().then(function (data) {
+                user.info = data;
                 deferred.resolve();
             }, function (error) {
                 deferred.reject(error)
@@ -30,9 +30,9 @@ angular.module('myApp.user', [])
         user.login = function (credentials) {
             var deferred = $q.defer();
 
-            Restangular.one(user.urls.get_token).customPOST(credentials).then(function (response) {
-                sessionStorage.setItem('DjangoAuthToken', response.data.token);
-                Restangular.setDefaultHeaders({Authorization: 'Token ' + response.data.token});
+            Restangular.one(user.urls.get_token).customPOST(credentials).then(function (data) {
+                sessionStorage.setItem('DjangoAuthToken', data.token);
+                Restangular.setDefaultHeaders({Authorization: 'Token ' + data.token});
                 user.getInfo().then(function () {
                     deferred.resolve();
                 });
@@ -55,13 +55,11 @@ angular.module('myApp.user', [])
         };
 
         user.urls = {
-            get_token: 'api-auth-token/',
+            get_token: 'api-token-auth/',
             get_user_info: 'get-user-info/'
-            //logout: '/logout',
-            //user: '/user'
         };
 
         return user
-    })
+    });
 
 
