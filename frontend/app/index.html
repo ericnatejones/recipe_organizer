@@ -19,12 +19,15 @@
         <link rel="stylesheet" href="app.css">
         <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body class="body">
-        <div class="title">Organize Your Recipes</div>
+
+    <body ng-controller="AppCtrl" class="body">
+        <div class="title">
+            <p>{{ user.first_name}}'s Recipes</p>
+        </div>
         <ul class="menu">
             <li><a href="#/recipes">List of Recipes</a></li>
             <li><a href="#/add-recipe">Add a New Recipe</a></li>
-            <!--<li><a href="#/view2">view2</a></li>-->
+            <li><a ng-click="logout()">Log Out</a></li>
         </ul>
 
         <!--[if lt IE 7]>
@@ -34,7 +37,6 @@
 
 
         <div ng-view>
-            <!--You can put stuff here-->
 
         </div>
         <footer class = "footer">
@@ -57,7 +59,6 @@
         <script src="add-recipe/addRecipe.js"></script>
         <script src="auth/auth.js"></script>
         <script src="auth/user.js"></script>
-        <!--<script src="view2/view2.js"></script>-->
         <script src="components/version/version.js"></script>
         <script src="components/version/version-directive.js"></script>
         <script src="components/version/interpolate-filter.js"></script>

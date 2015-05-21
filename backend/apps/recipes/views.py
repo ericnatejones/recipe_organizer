@@ -28,3 +28,7 @@ class GetUserInfo(generics.RetrieveAPIView):
     def retrieve(self, request, *args, **kwargs):
         user = UserSerializer(request.user)
         return HttpResponse(json.dumps(user.data))
+
+
+class Registration(generics.CreateAPIView):
+    serializer_class = UserSerializer
