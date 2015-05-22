@@ -1,0 +1,79 @@
+<head>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+
+    <div class = "leftSide">
+        <!--<br>-->
+        <!--<button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"-->
+                <!--ng-click="addRecipe()"> Save Recipe-->
+        <!--</button>-->
+
+        <br>
+        <br>
+        <button class="btn btn-sm btn-info glyphicon glyphicon-triangle-left"
+                ng-click="backRecipe()"> Back To Recipe List
+        </button>
+    </div>
+
+
+    <div class = "section">
+        <p class="para paraAdd"> Add a new recipe below:</p>
+        <p class="required">*All fields required*</p>
+        <label>Recipe Name:</label>
+        <div class="form-group">
+            <input ng-model="recipe.name" class="form-control">
+        </div>
+
+        <br>
+        <label>Recipe Directions:</label>
+        <div class="form-group">
+            <textarea ng-model="recipe.directions" class="form-control"></textarea>
+        </div>
+
+        <br>
+        <label>Recipe Descriptions:</label>
+        <div class="form-group">
+            <textarea ng-model="recipe.description" class="form-control"></textarea>
+        </div>
+
+        <br>
+        <label>Ingredients:</label>
+        <div class="form-group">
+            <input ng-model="ingredientName" class="form-control">
+        <button ng-click="addIngredientToRecipe(ingredientName)">Add Ingredient to Recipe</button>
+        </div>
+        <p class="para sub" ng-show="editing">(Click the X to delete ingredient)</p>
+
+        <br>
+        <ol>
+            <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}
+                <i ng-click="removeIngredientFromRecipe(ingredient)"
+                   class="btn btn-xs btn-danger glyphicon glyphicon-remove"></i>
+            </li>
+        </ol>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
+                ng-click="addRecipe()"> Save Recipe
+        </button>
+    </div>
+
+    <div class = "rightSide">
+    </div>
+
+    <div class = "pictureArea">
+        <br>
+        <br>
+        <p class = "stitched">Recipe Photo Goes Here
+            <img width="250"
+                 class="pictureDetail img-responsive center-block img-rounded"
+                 src="{{ recipe.photo }}"
+                    ng-show="recipe.photo"></p>
+            <div class="form-group">
+                <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+               onchange="angular.element(this).scope().addPhoto()"/>
+            </div>
+    </div>
+</body>

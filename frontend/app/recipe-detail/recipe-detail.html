@@ -1,0 +1,98 @@
+<head>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class="leftSide">
+        <br>
+        <br>
+        <button class="btn btn-sm btn-danger glyphicon glyphicon-trash"
+                ng-click="deleteRecipe()">  Delete This Recipe
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-primary glyphicon glyphicon-plus"
+                ng-click="addRecipe()">  Add New Recipe
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-warning glyphicon glyphicon-pencil"
+                ng-click="editing = !editing">  Edit Current Recipe
+        </button>
+        <br>
+        <br>
+        <button class="btn btn-sm btn-info glyphicon glyphicon-triangle-left"
+                ng-click="backRecipe()">  Back To Recipe List
+        </button>
+    </div>
+
+
+    <div class="section">
+        <p class="para paraDetail"> Recipe details below:</p>
+        <p class="required" ng-show="editing">*All fields required*</p>
+
+        <p class="para">Name:</p>
+        <p class="paraDetailList" ng-hide="editing">{{ recipe.name }}</p>
+                <div class="form-group">
+                     <input class="form-control" ng-show="editing" ng-model="recipe.name">
+                </div>
+
+        <p class="para">Description:</p>
+        <p class="paraDetailList" ng-hide="editing">{{ recipe.description }}</p>
+                <div class="form-group">
+                    <textarea class="form-control" ng-show="editing" ng-model="recipe.description"></textarea>
+                </div>
+
+        <p class="para">Directions:</p>
+        <p class="paraDetailList" ng-hide="editing">{{ recipe.directions }}</p>
+                <div class="form-group">
+                    <textarea class="form-control" ng-show="editing" ng-model="recipe.directions"></textarea>
+                </div>
+
+        <p class="para">Ingredients:</p>
+        <p class="para sub" ng-show="editing">(Click the X to delete ingredient)</p>
+            <ul>
+                <li class="paraDetailList" ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}
+                    <i ng-click="removeIngredientFromRecipe(ingredient)"
+                       ng-show="editing"
+                       class="btn btn-xs btn-danger glyphicon glyphicon-remove"></i>
+                </li>
+            </ul>
+        <br>
+            <div class="form-group">
+                <div ng-show="editing">
+                    <input class="form-control" ng-model ="ingredientName">
+                    <br>
+                    <button ng-click="addIngredientToRecipe(ingredientName)" ng-show="editing">Add Ingredient to Recipe</button>
+                </div>
+             </div>
+            <br>
+            <br>
+            <button class="btn btn-sm btn-success glyphicon glyphicon-floppy-disk"
+                    ng-click="saveEditedRecipe()"
+                    ng-show="editing"> Save Changes
+            </button>
+            <br>
+        </div>
+    </div>
+
+    <div class = "rightSide">
+    </div>
+
+    <div class = "pictureArea">
+        <br>
+        <br>
+        <p class = "stitched"><a href="#/recipes/{{ recipe.id }}" class= "recipePhotoName">{{ recipe.name }}</a>
+            <img width="250"
+                 class="pictureDetail img-responsive center-block img-rounded"
+                 ng-src="{{ recipe.photo }}"></p>
+        <div class="form-group" ng-show="editing">
+                <input type="file" id="file" name="file" accept="image/gif, image/x-png, image/jpeg"
+               onchange="angular.element(this).scope().addPhoto()"/>
+        </div>
+    </div>
+</body>
+
+
+
+

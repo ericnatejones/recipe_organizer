@@ -1,0 +1,62 @@
+<!--Two-way data binding-->
+<head>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <div class = "leftSide">
+        <br>
+        <button class="btn btn-sm btn-primary glyphicon glyphicon-plus"
+                ng-click="addRecipe()"> Add New Recipe
+        </button>
+    </div>
+
+    <div class = "section">
+        <!--This is the search functionality-->
+        <p class="para paraList"> Search your list of Recipes:</p>
+        <p class="para sub"> Type Name, Description, Directions, or Ingredients</p>
+        <br>
+        <div class="form-group">
+            <input ng-model="searchText.$" class="form-control">
+        </div>
+        <br>
+        <br>
+        <ul>
+            <li ng-repeat="recipe in recipes | filter:searchText">
+                <a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></li>
+        </ul>
+    </div>
+    <!--<div class = "pictureArea">-->
+        <!--<img src="" width="300" class=""img-responsive">-->
+    <!--</div>-->
+
+    <div class = "rightSide">
+    </div>
+
+</body>
+
+
+
+<!--Two ways to adding a photo:-->
+
+    <!--<div class = "section pictureArea">-->
+        <!--<br>-->
+        <!--<br>-->
+        <!--<p class = "stitched">Recipe Photo Goes Here-->
+        <!--<a href="#/recipes/{{ recipe.id }}">{{ recipe.photo }}</a>-->
+            <!--<img width="200"-->
+                 <!--class="img-responsive"-->
+                 <!--ng-src="{{ recipe.photo }}"></p>-->
+
+    <!--</div>-->
+        <!--<div ng-repeat="recipe in recipes | filter:searchText">-->
+            <!--<p><a href="#/recipes/{{ recipe.id }}">{{ recipe.name }}</a></p>-->
+            <!--<img width="200"-->
+                 <!--class="img-responsive"-->
+                 <!--ng-src="{{ recipe.photo }}">-->
+        <!--</div>-->
+
+
+
+
+

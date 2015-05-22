@@ -1,2 +1,2 @@
-# Portfolio
-My personal portfolio page
+Recipes "R" Us. 
+More details coming soon!
