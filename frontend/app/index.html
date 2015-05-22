@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>A Simple Recipe Organizer</title>
+        <title>Mama's Recipes</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
@@ -19,12 +19,15 @@
         <link rel="stylesheet" href="app.css">
         <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body class="body">
-        <div class="title">Organize Your Recipes</div>
+
+    <body ng-controller="AppCtrl" class="body">
+        <div class="title">
+            <a ng-show="user">{{ user.first_name}}'s </a><a>Recipes</a>
+        </div>
         <ul class="menu">
-            <li><a href="#/recipes">Search List of Recipes</a></li>
+            <li><a href="#/recipes">List of Recipes</a></li>
             <li><a href="#/add-recipe">Add a New Recipe</a></li>
-            <!--<li><a href="#/view2">view2</a></li>-->
+            <li><a ng-click="logout()">Log Out</a></li>
         </ul>
 
         <!--[if lt IE 7]>
@@ -34,7 +37,6 @@
 
 
         <div ng-view>
-            <!--You can put stuff here-->
 
         </div>
         <footer class = "footer">
@@ -55,7 +57,8 @@
         <script src="recipes/recipes.js"></script>
         <script src="recipe-detail/recipeDetail.js"></script>
         <script src="add-recipe/addRecipe.js"></script>
-        <!--<script src="view2/view2.js"></script>-->
+        <script src="auth/auth.js"></script>
+        <script src="auth/user.js"></script>
         <script src="components/version/version.js"></script>
         <script src="components/version/version-directive.js"></script>
         <script src="components/version/interpolate-filter.js"></script>

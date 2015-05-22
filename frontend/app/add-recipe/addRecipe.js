@@ -9,7 +9,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         });
     }])
 
-    .controller('AddRecipeCtrl', ['$scope', 'Restangular','$location', function ($scope, Restangular, $location) {
+    .controller('AddRecipeCtrl', ['$scope', 'Restangular','$location', 'user', function ($scope, Restangular, $location, user) {
 
         $scope.recipe = {
             ingredients: []
@@ -31,6 +31,7 @@ angular.module('myApp.addRecipe', ['ngRoute'])
         };
 
         $scope.addRecipe = function () {
+            $scope.recipe.owner = user.info.id;
             Restangular.all('add-recipe').customPOST($scope.recipe).then(function () {
                 toastr.success("Recipe was successfully created!");
                 $scope.recipe = {ingredients: []};
