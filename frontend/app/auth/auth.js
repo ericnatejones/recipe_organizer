@@ -45,7 +45,7 @@ angular.module('myApp.auth', ['ngRoute'])
                     password: '',
                     email: ''
                 };
-                $location.path('/kids')
+                $location.path('/recipes')
             }, function () {
                 alert("There was a problem. Please try again")
             })

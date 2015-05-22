@@ -22,7 +22,7 @@
 
     <body ng-controller="AppCtrl" class="body">
         <div class="title">
-            <p>{{ user.first_name}}'s Recipes</p>
+            <a ng-show="user">{{ user.first_name}}'s </a><a>Recipes</a>
         </div>
         <ul class="menu">
             <li><a href="#/recipes">List of Recipes</a></li>
