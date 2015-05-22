@@ -91,52 +91,67 @@
     line-height: 2em;
     background-image: url(backgrounds/congruent_outline.png);
     height: 57.5em;
-    width: 12.5em;
+    width: 15%;
     float: left;
     padding: .3125em;
 }
 
+.btn {
+    flex-wrap: wrap;
+    width: 90%;
+    height: 3%;
+    white-space: pre-wrap;
+}
+
+.content {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap
+}
+
 .section {
-    width: 34.375em;
+    order: 1;
+    width: 30%;
     float: left;
     padding: 3.125em;
     display: inline-flex;
     flex-direction: column;
+    flex-wrap: wrap
+}
+
+.pictureArea {
+    order: 2;
+    line-height: 2em;
+    height: 57.5em;
+    width: 30%;
+    float: right;
+    padding: .625em;
 }
 
 .rightSide {
     line-height: 2em;
     background-image: url(backgrounds/congruent_outline.png);
     height: 57.5em;
-    width: 12.5em;
+    width: 15%;
     float: right;
     padding: .3125em;
 }
 
-.pictureArea {
-    line-height: 2em;
-    height: 57.5em;
-    width: 26.5em;
-    float: right;
-    padding: .625em;
-}
-
 .stitched {
-    padding: 10px;
-    padding-bottom: 50px;
+    padding: .63em;
+    padding-bottom: 3.13em;
     text-align: center;
-    margin: 10px;
+    margin: .63em;
     background: #ff0030;
     color: #000;
-    font-size: 21px;
-    font-weight: bold;
+    font-size: 1.31em;
     line-height: 1.3em;
-    border: 2px dashed #000;
-    border-radius: 10px;
-    box-shadow: 0 0 0 4px #ff0030, 2px 1px 6px 4px rgba(10, 10, 0, 0.5);
-    text-shadow: -1px -1px #aa3030;
+    border: 0.13em dashed #000;
+    border-radius: .63em;
+    box-shadow: 0 0 0 0.25em #ff0030, 0.13em 0.06em 0.38em 0.25em rgba(10, 10, 0, 0.5);
+    text-shadow: -0.06em -0.06em #aa3030;
     font-weight: normal;
-
+    height: initial;
 }
 
 .recipePhotoName {
@@ -162,12 +177,32 @@
 }
 
 .pictureDetail {
-    margin-top: 30px;
+    margin-top: 1.88em;
 }
 
 .required {
-    color:red;
+    color: red;
     font-style: italic;
+}
+
+.landingContainer{
+    width: 80%;
+    height: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: inherit;
+    border: #000000;
+}
+
+.landingLogin {
+    width: 40%;
+    float: left;
+}
+
+.landingSignup {
+    width: 40%;
+    float: right;
+    padding-bottom: 2%;
 }
 
 
