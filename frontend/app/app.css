@@ -12,13 +12,13 @@
     color: black;
 }
 
-.menu:before {
-    content: "[";
-}
+/*.menu:before {*/
+    /*content: "[";*/
+/*}*/
 
-.menu:after {
-    content: "]";
-}
+/*.menu:after {*/
+    /*content: "]";*/
+/*}*/
 
 .menu > li {
     display: inline;
