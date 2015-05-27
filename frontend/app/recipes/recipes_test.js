@@ -12,11 +12,10 @@ describe('myApp.recipes module', function () {
         }));
 
         //check for a response
-        it('should ....', inject(function ($scope.addRecipe) {
-            var $scope.addRecipe = $controller();
-            expect(addRecipe).toBeDefined();
-        }));
-
+        //it('should ....', inject(function ($scope.addRecipe) {
+        //    var $scope.addRecipe = $controller();
+        //    expect(addRecipe).toBeDefined();
+        //}));
 
     });
 });
